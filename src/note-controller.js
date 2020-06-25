@@ -4,7 +4,6 @@
   }
 
   NoteController.prototype.renderHTML = function() {
-    this._addNote('Fav drink: seltzer') // change later
     document.getElementById('app').innerHTML = this._returnNoteView().returnHTML();
   }
 
@@ -12,9 +11,9 @@
     return new NoteView(this.noteList);
   }
 
-  NoteController.prototype._addNote = function(note) {
-    this.noteList.addNote(note);
-  }
-
   exports.NoteController = NoteController
 })(this);
+
+// for each note we want to get the href url
+// this needs to be created on the fly and packaged inside the returnHTML in note-list-view
+//

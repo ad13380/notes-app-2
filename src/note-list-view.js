@@ -6,12 +6,18 @@
   NoteView.prototype.returnHTML = function() {
     if (!this.noteList) { return null }
 
-    var this_test = this // reassign 'this' to 'this_test'
-
+    var scope = this 
     var HTMLString = this.noteList.getNotes().reduce(function(acc, val) {
-      return acc += '<li><div>' + this_test._preview(val.note()) // use 'this_test'
+      console.log(`#notes/${val.getId()}`)
+
+      return acc += 
+      '<li><div>' 
+      + `<a href='#notes/${val.getId()}'>`
+      + scope._preview(val.note()) 
+      + '</a>'
       + '</div></li>';
     }, '<ul>');
+
     HTMLString += '</ul>';
     return HTMLString;
   }
