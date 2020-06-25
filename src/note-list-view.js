@@ -8,8 +8,6 @@
 
     var scope = this 
     var HTMLString = this.noteList.getNotes().reduce(function(acc, val) {
-      console.log(`#notes/${val.getId()}`)
-
       return acc += 
       '<li><div>' 
       + `<a href='#notes/${val.getId()}'>`
@@ -17,7 +15,6 @@
       + '</a>'
       + '</div></li>';
     }, '<ul>');
-
     HTMLString += '</ul>';
     return HTMLString;
   }

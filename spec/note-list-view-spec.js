@@ -7,7 +7,7 @@
   var noteList = new NoteList();
   noteList.addNote('Note 1');
   var noteView = new NoteView(noteList);
-  expected_result = '<ul><li><div>Note 1</div></li></ul>'
+  expected_result = "<ul><li><div><a href='#notes/0'>Note 1</a></div></li></ul>"
   assert.isTrue(noteView.returnHTML() === expected_result);
 })();
 
@@ -16,8 +16,8 @@
   noteList.addNote('Note 1');
   noteList.addNote('Note 2');
   var noteView = new NoteView(noteList);
-  expected_result = '<ul><li><div>Note 1</div></li>'
-  expected_result += '<li><div>Note 2</div></li></ul>'
+  expected_result = "<ul><li><div><a href='#notes/0'>Note 1</a></div></li>"
+  expected_result += "<li><div><a href='#notes/1'>Note 2</a></div></li></ul>"
   assert.isTrue(noteView.returnHTML() === expected_result);
 })();
 
@@ -25,6 +25,6 @@
   var noteList = new NoteList();
   noteList.addNote('Favourite food: pesto');
   var noteView = new NoteView(noteList);
-  expected_result = '<ul><li><div>Favourite food: pest</div></li></ul>'
+  expected_result = "<ul><li><div><a href='#notes/0'>Favourite food: pest</a></div></li></ul>"
   assert.isTrue(noteView.returnHTML() === expected_result);
 })();
